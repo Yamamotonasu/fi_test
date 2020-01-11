@@ -24,6 +24,9 @@
 		0391FD8023C7E11A00B2D47D /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0391FD7F23C7E11A00B2D47D /* RxRelay.framework */; };
 		0391FD8123C7E11A00B2D47D /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0391FD7F23C7E11A00B2D47D /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0391FD8323C9603800B2D47D /* UIViewController+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD8223C9603800B2D47D /* UIViewController+Extended.swift */; };
+		0391FD8623C9622400B2D47D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD8523C9622400B2D47D /* Constants.swift */; };
+		0391FD8823C9D2B300B2D47D /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD8723C9D2B300B2D47D /* SignupViewController.swift */; };
+		0391FD8B23C9DD9500B2D47D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD8A23C9DD9500B2D47D /* HomeViewController.swift */; };
 		14616A1DD9A07F0C633D8485 /* Pods_FirebaseTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB24050ECD30968DB3B4CFC /* Pods_FirebaseTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +63,9 @@
 		0391FD7C23C7E10B00B2D47D /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		0391FD7F23C7E11A00B2D47D /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		0391FD8223C9603800B2D47D /* UIViewController+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extended.swift"; sourceTree = "<group>"; };
+		0391FD8523C9622400B2D47D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0391FD8723C9D2B300B2D47D /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		0391FD8A23C9DD9500B2D47D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1DB24050ECD30968DB3B4CFC /* Pods_FirebaseTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61B132FB389B9E115B9E415 /* Pods-FirebaseTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTest.release.xcconfig"; path = "Target Support Files/Pods-FirebaseTest/Pods-FirebaseTest.release.xcconfig"; sourceTree = "<group>"; };
 		B289571F4756B69E8CAE02C3 /* Pods-FirebaseTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTest.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseTest/Pods-FirebaseTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 		0391FD7123C7703300B2D47D /* src */ = {
 			isa = PBXGroup;
 			children = (
+				0391FD8423C961E500B2D47D /* Utils */,
 				0391FD7323C7732D00B2D47D /* Extensions */,
 				0391FD7223C7703C00B2D47D /* Views */,
 			);
@@ -125,9 +132,8 @@
 		0391FD7223C7703C00B2D47D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0391FD5D23C7688C00B2D47D /* LoginViewController.swift */,
-				0391FD6F23C7701500B2D47D /* Login.storyboard */,
-				0391FD5F23C7688C00B2D47D /* Main.storyboard */,
+				0391FD8C23C9DE5100B2D47D /* Home */,
+				0391FD8923C9DD6A00B2D47D /* Signup */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,6 +144,33 @@
 				0391FD8223C9603800B2D47D /* UIViewController+Extended.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0391FD8423C961E500B2D47D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0391FD8523C9622400B2D47D /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0391FD8923C9DD6A00B2D47D /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				0391FD8723C9D2B300B2D47D /* SignupViewController.swift */,
+				0391FD5D23C7688C00B2D47D /* LoginViewController.swift */,
+				0391FD6F23C7701500B2D47D /* Login.storyboard */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		0391FD8C23C9DE5100B2D47D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0391FD8A23C9DD9500B2D47D /* HomeViewController.swift */,
+				0391FD5F23C7688C00B2D47D /* Main.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		95E25CE199AE31BCD602B3AE /* Pods */ = {
@@ -302,9 +335,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0391FD8823C9D2B300B2D47D /* SignupViewController.swift in Sources */,
+				0391FD8623C9622400B2D47D /* Constants.swift in Sources */,
 				0391FD5E23C7688C00B2D47D /* LoginViewController.swift in Sources */,
 				0391FD5A23C7688C00B2D47D /* AppDelegate.swift in Sources */,
 				0391FD5C23C7688C00B2D47D /* SceneDelegate.swift in Sources */,
+				0391FD8B23C9DD9500B2D47D /* HomeViewController.swift in Sources */,
 				0391FD8323C9603800B2D47D /* UIViewController+Extended.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
