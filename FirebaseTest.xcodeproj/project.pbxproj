@@ -3,30 +3,63 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0391FD5A23C7688C00B2D47D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD5923C7688C00B2D47D /* AppDelegate.swift */; };
 		0391FD5C23C7688C00B2D47D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD5B23C7688C00B2D47D /* SceneDelegate.swift */; };
-		0391FD5E23C7688C00B2D47D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD5D23C7688C00B2D47D /* ViewController.swift */; };
+		0391FD5E23C7688C00B2D47D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD5D23C7688C00B2D47D /* LoginViewController.swift */; };
 		0391FD6123C7688C00B2D47D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0391FD5F23C7688C00B2D47D /* Main.storyboard */; };
 		0391FD6323C7689300B2D47D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0391FD6223C7689300B2D47D /* Assets.xcassets */; };
 		0391FD6623C7689300B2D47D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0391FD6423C7689300B2D47D /* LaunchScreen.storyboard */; };
 		0391FD6E23C76C3C00B2D47D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0391FD6D23C76C3C00B2D47D /* GoogleService-Info.plist */; };
+		0391FD7023C7701500B2D47D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0391FD6F23C7701500B2D47D /* Login.storyboard */; };
+		0391FD7623C7E0F100B2D47D /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0391FD7523C7E0F100B2D47D /* RxSwift.framework */; };
+		0391FD7723C7E0F100B2D47D /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0391FD7523C7E0F100B2D47D /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0391FD7A23C7E0FD00B2D47D /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0391FD7923C7E0FD00B2D47D /* NSObject_Rx.framework */; };
+		0391FD7B23C7E0FD00B2D47D /* NSObject_Rx.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0391FD7923C7E0FD00B2D47D /* NSObject_Rx.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0391FD7D23C7E10B00B2D47D /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0391FD7C23C7E10B00B2D47D /* RxCocoa.framework */; };
+		0391FD7E23C7E10B00B2D47D /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0391FD7C23C7E10B00B2D47D /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0391FD8023C7E11A00B2D47D /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0391FD7F23C7E11A00B2D47D /* RxRelay.framework */; };
+		0391FD8123C7E11A00B2D47D /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0391FD7F23C7E11A00B2D47D /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0391FD8323C9603800B2D47D /* UIViewController+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD8223C9603800B2D47D /* UIViewController+Extended.swift */; };
 		14616A1DD9A07F0C633D8485 /* Pods_FirebaseTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB24050ECD30968DB3B4CFC /* Pods_FirebaseTest.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0391FD7823C7E0F100B2D47D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0391FD8123C7E11A00B2D47D /* RxRelay.framework in Embed Frameworks */,
+				0391FD7E23C7E10B00B2D47D /* RxCocoa.framework in Embed Frameworks */,
+				0391FD7B23C7E0FD00B2D47D /* NSObject_Rx.framework in Embed Frameworks */,
+				0391FD7723C7E0F100B2D47D /* RxSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0391FD5623C7688C00B2D47D /* FirebaseTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0391FD5923C7688C00B2D47D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0391FD5B23C7688C00B2D47D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0391FD5D23C7688C00B2D47D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0391FD5D23C7688C00B2D47D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0391FD6023C7688C00B2D47D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0391FD6223C7689300B2D47D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0391FD6523C7689300B2D47D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0391FD6723C7689300B2D47D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0391FD6D23C76C3C00B2D47D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0391FD6F23C7701500B2D47D /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		0391FD7523C7E0F100B2D47D /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		0391FD7923C7E0FD00B2D47D /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
+		0391FD7C23C7E10B00B2D47D /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		0391FD7F23C7E11A00B2D47D /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		0391FD8223C9603800B2D47D /* UIViewController+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extended.swift"; sourceTree = "<group>"; };
 		1DB24050ECD30968DB3B4CFC /* Pods_FirebaseTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61B132FB389B9E115B9E415 /* Pods-FirebaseTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTest.release.xcconfig"; path = "Target Support Files/Pods-FirebaseTest/Pods-FirebaseTest.release.xcconfig"; sourceTree = "<group>"; };
 		B289571F4756B69E8CAE02C3 /* Pods-FirebaseTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTest.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseTest/Pods-FirebaseTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -37,7 +70,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0391FD7D23C7E10B00B2D47D /* RxCocoa.framework in Frameworks */,
+				0391FD7623C7E0F100B2D47D /* RxSwift.framework in Frameworks */,
+				0391FD7A23C7E0FD00B2D47D /* NSObject_Rx.framework in Frameworks */,
 				14616A1DD9A07F0C633D8485 /* Pods_FirebaseTest.framework in Frameworks */,
+				0391FD8023C7E11A00B2D47D /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,10 +102,9 @@
 		0391FD5823C7688C00B2D47D /* FirebaseTest */ = {
 			isa = PBXGroup;
 			children = (
+				0391FD7123C7703300B2D47D /* src */,
 				0391FD5923C7688C00B2D47D /* AppDelegate.swift */,
 				0391FD5B23C7688C00B2D47D /* SceneDelegate.swift */,
-				0391FD5D23C7688C00B2D47D /* ViewController.swift */,
-				0391FD5F23C7688C00B2D47D /* Main.storyboard */,
 				0391FD6223C7689300B2D47D /* Assets.xcassets */,
 				0391FD6423C7689300B2D47D /* LaunchScreen.storyboard */,
 				0391FD6723C7689300B2D47D /* Info.plist */,
@@ -77,19 +113,49 @@
 			path = FirebaseTest;
 			sourceTree = "<group>";
 		};
+		0391FD7123C7703300B2D47D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0391FD7323C7732D00B2D47D /* Extensions */,
+				0391FD7223C7703C00B2D47D /* Views */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		0391FD7223C7703C00B2D47D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0391FD5D23C7688C00B2D47D /* LoginViewController.swift */,
+				0391FD6F23C7701500B2D47D /* Login.storyboard */,
+				0391FD5F23C7688C00B2D47D /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0391FD7323C7732D00B2D47D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0391FD8223C9603800B2D47D /* UIViewController+Extended.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		95E25CE199AE31BCD602B3AE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				B289571F4756B69E8CAE02C3 /* Pods-FirebaseTest.debug.xcconfig */,
 				A61B132FB389B9E115B9E415 /* Pods-FirebaseTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		ED7AE138E8BA239F81D708AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0391FD7F23C7E11A00B2D47D /* RxRelay.framework */,
+				0391FD7C23C7E10B00B2D47D /* RxCocoa.framework */,
+				0391FD7923C7E0FD00B2D47D /* NSObject_Rx.framework */,
+				0391FD7523C7E0F100B2D47D /* RxSwift.framework */,
 				1DB24050ECD30968DB3B4CFC /* Pods_FirebaseTest.framework */,
 			);
 			name = Frameworks;
@@ -107,6 +173,8 @@
 				0391FD5323C7688C00B2D47D /* Frameworks */,
 				0391FD5423C7688C00B2D47D /* Resources */,
 				99E18E4917E06534B1D763AB /* [CP] Embed Pods Frameworks */,
+				0391FD7423C777DE00B2D47D /* Carthage */,
+				0391FD7823C7E0F100B2D47D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,6 +226,7 @@
 				0391FD6623C7689300B2D47D /* LaunchScreen.storyboard in Resources */,
 				0391FD6E23C76C3C00B2D47D /* GoogleService-Info.plist in Resources */,
 				0391FD6323C7689300B2D47D /* Assets.xcassets in Resources */,
+				0391FD7023C7701500B2D47D /* Login.storyboard in Resources */,
 				0391FD6123C7688C00B2D47D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +234,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0391FD7423C777DE00B2D47D /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n\n";
+		};
 		65DFE2DBF7DCFDE405D0C6F3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,9 +302,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0391FD5E23C7688C00B2D47D /* ViewController.swift in Sources */,
+				0391FD5E23C7688C00B2D47D /* LoginViewController.swift in Sources */,
 				0391FD5A23C7688C00B2D47D /* AppDelegate.swift in Sources */,
 				0391FD5C23C7688C00B2D47D /* SceneDelegate.swift in Sources */,
+				0391FD8323C9603800B2D47D /* UIViewController+Extended.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +452,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FirebaseTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,6 +475,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FirebaseTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
