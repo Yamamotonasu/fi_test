@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import RxSwift
 import RxCocoa
 
@@ -45,12 +46,13 @@ class SignupViewController: UIViewController {
 }
 
 // MARK: - PrivateFunction
+
 extension SignupViewController {
     
     private func subscribe() {
         // 登録ボタン
         registerButton.rx.tap.subscribe(onNext: { [weak self] in
-            
+            self?.createUser()
         }).disposed(by: rx.disposeBag)
         
         // facebook連携ボタン
@@ -58,6 +60,14 @@ extension SignupViewController {
             
         }).disposed(by: rx.disposeBag)
     }
+    
+    private func createUser() {
+//        guard let pass = passwordTextField.text, let passc = confirmPasswordTextField.text else {
+//            s
+//        }
+//        let info = CreateUserModel.InputInfomation.init(userName: userNameTextField.text, email: emailTextField.text, passowrd: passwordTextField.text, passwordConfirm: <#T##String?#>)
+//        Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>, completion: <#T##AuthDataResultCallback?##AuthDataResultCallback?##(AuthDataResult?, Error?) -> Void#>)
+//    }
 
 }
 

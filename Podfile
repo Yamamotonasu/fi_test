@@ -5,11 +5,17 @@ def rswift
   pod 'R.swift'
 end
 
+def firebase
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+end
+
 target 'FirebaseTest' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   
   rswift
+  firebase
 
   # Pods for FirebaseTest
 
