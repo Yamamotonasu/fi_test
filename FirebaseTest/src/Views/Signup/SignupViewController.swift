@@ -60,3 +60,16 @@ extension SignupViewController {
     }
 
 }
+
+// MARK: - MakeInstance
+
+extension SignupViewController {
+    
+    static func makeInstance() -> UIViewController {
+        guard let vc = R.storyboard.login.signupViewController() else {
+            return UIViewController()
+        }
+        return vc
+    }
+
+}

@@ -43,6 +43,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         subscribe()
     }
 
@@ -51,6 +52,10 @@ class LoginViewController: UIViewController {
 // MARK: - PrivateFunction
 
 extension LoginViewController {
+    
+    private func setupUI() {
+        navigationController?.navigationBar.barTintColor = FS_RED
+    }
     
     private func subscribe() {
         // ログインボタン
@@ -65,13 +70,28 @@ extension LoginViewController {
         
         // ユーザー作成ボタン
         createNewUserButton.rx.tap.subscribe(onNext: { [weak self] in
-            
+            guard let _self = self else { return }
+            let vc = SignupViewController.makeInstance()
+            _self.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: rx.disposeBag)
         
         // パスワードを忘れたときのボタン
         forgotPasswordButton.rx.tap.subscribe(onNext: { [weak self] in
             
         }).disposed(by: rx.disposeBag)
+    }
+
+}
+
+// MARK: - MakeInstance
+
+extension LoginViewController {
+    
+    static func makeInstance() -> UIViewController {
+        guard let vc = R.storyboard.login.loginViewController() else {
+            return UIViewController()
+        }
+        return vc
     }
 
 }

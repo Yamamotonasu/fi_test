@@ -38,7 +38,21 @@ extension HomeViewController {
     private func subscribe() {
         // ログインボタン
         loginLogoutButton.rx.tap.subscribe(onNext: { [weak self] in
-            
+            let vc = LoginViewController.makeInstance()
+            self?.present(vc, animated: true)
         }).disposed(by: rx.disposeBag)
     }
+}
+
+// MARK: - MakeInstance
+
+extension HomeViewController {
+    
+    static func makeInstance() -> UIViewController {
+        guard let vc = R.storyboard.main.homeViewController() else {
+            return UIViewController()
+        }
+        return vc
+    }
+
 }
