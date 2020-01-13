@@ -29,6 +29,7 @@
 		0391FD8B23C9DD9500B2D47D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD8A23C9DD9500B2D47D /* HomeViewController.swift */; };
 		0391FD9323CAA57300B2D47D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD9223CAA57300B2D47D /* R.generated.swift */; };
 		0391FD9723CAB56700B2D47D /* CreateUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD9623CAB56700B2D47D /* CreateUserModel.swift */; };
+		0391FD9923CABCC700B2D47D /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD9823CABCC700B2D47D /* InputValidation.swift */; };
 		14616A1DD9A07F0C633D8485 /* Pods_FirebaseTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB24050ECD30968DB3B4CFC /* Pods_FirebaseTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		0391FD8A23C9DD9500B2D47D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0391FD9223CAA57300B2D47D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		0391FD9623CAB56700B2D47D /* CreateUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserModel.swift; sourceTree = "<group>"; };
+		0391FD9823CABCC700B2D47D /* InputValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
 		1DB24050ECD30968DB3B4CFC /* Pods_FirebaseTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61B132FB389B9E115B9E415 /* Pods-FirebaseTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTest.release.xcconfig"; path = "Target Support Files/Pods-FirebaseTest/Pods-FirebaseTest.release.xcconfig"; sourceTree = "<group>"; };
 		B289571F4756B69E8CAE02C3 /* Pods-FirebaseTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTest.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseTest/Pods-FirebaseTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				0391FD8523C9622400B2D47D /* Constants.swift */,
+				0391FD9823CABCC700B2D47D /* InputValidation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				0391FD8823C9D2B300B2D47D /* SignupViewController.swift in Sources */,
 				0391FD8623C9622400B2D47D /* Constants.swift in Sources */,
 				0391FD5E23C7688C00B2D47D /* LoginViewController.swift in Sources */,
+				0391FD9923CABCC700B2D47D /* InputValidation.swift in Sources */,
 				0391FD9723CAB56700B2D47D /* CreateUserModel.swift in Sources */,
 				0391FD9323CAA57300B2D47D /* R.generated.swift in Sources */,
 				0391FD5A23C7688C00B2D47D /* AppDelegate.swift in Sources */,

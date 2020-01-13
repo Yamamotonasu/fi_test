@@ -1,2 +1,3 @@
 github "ReactiveX/RxSwift" "5.0.1"
 github "RxSwiftCommunity/NSObject-Rx" "5.0.2"
+github "vikmeup/SCLAlertView-Swift" "d98c3e647ad77ed537d021e7d6ad07bb71f83186"

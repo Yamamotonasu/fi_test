@@ -14,6 +14,7 @@ import RxCocoa
 /**
  * ユーザー登録画面
  */
+typealias UserNameValidator = ValidationContainer<String, InvalidUserName>
 class SignupViewController: UIViewController {
     
     // MARK: - Outlets
@@ -62,13 +63,48 @@ extension SignupViewController {
     }
     
     private func createUser() {
-//        guard let pass = passwordTextField.text, let passc = confirmPasswordTextField.text else {
-//            s
-//        }
-//        let info = CreateUserModel.InputInfomation.init(userName: userNameTextField.text, email: emailTextField.text, passowrd: passwordTextField.text, passwordConfirm: <#T##String?#>)
-//        Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>, completion: <#T##AuthDataResultCallback?##AuthDataResultCallback?##(AuthDataResult?, Error?) -> Void#>)
-//    }
+        let userStatus = validateUserName(userNameTextField.text ?? "")
+        switch userStatus {
+        case .invalid(let status):
+            switch status {
+            case .empty:
+                // TODO: showAlert
+                break
+            case .tooLong:
+                // TODO: showAlert
+                break
+            }
+        case .valid:
+            break
+        }
 
+        guard let email = emailTextField.text else {
+            // TODO: メールアドレスを入力してください
+            return
+        }
+        
+        guard let pass = passwordTextField.text, let passc = confirmPasswordTextField.text else {
+            // TODO: パスワードを入力してください。
+            return
+        }
+        
+        guard pass == passc else {
+            // TODO: パスワードと確認用パスワードが異なります。
+            return
+        }
+//        let info = CreateUserModel.InputInfomation.init(userName: userName, email: email, password: pass)
+//        Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>, completion: <#T##AuthDataResultCallback?##AuthDataResultCallback?##(AuthDataResult?, Error?) -> Void#>)
+    }
+
+}
+
+// MARK: - ValidateFunction
+
+extension SignupViewController {
+    
+    private func validateUserName(_ user: String) -> ValidationStatus<InvalidUserName> {
+        UserNameValidator.validate(userNameTextField.text!) { $0.isNotEmpty().lessThanDigits()}
+    }
 }
 
 // MARK: - MakeInstance
