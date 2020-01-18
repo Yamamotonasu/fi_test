@@ -78,7 +78,7 @@ extension LoginViewController {
 
         // パスワードを忘れたときのボタン
         forgotPasswordButton.rx.tap.subscribe(onNext: { [weak self] in
-
+            self?.forgotPassword()
         }).disposed(by: rx.disposeBag)
     }
 
@@ -88,6 +88,7 @@ extension LoginViewController {
 
 extension LoginViewController {
 
+    /// ログインする
     private func loginUser() {
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
@@ -100,6 +101,19 @@ extension LoginViewController {
             self?.dismiss(animated: true)
         }
     }
+    
+    /// パスワードをリセットする
+    private func forgotPassword() {
+        guard let email = emailTextField.text else { return }
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if let error = error {
+                SCLAlertView().showError("", subTitle: error.localizedDescription, closeButtonTitle: "確認")
+                return
+            }
+            SCLAlertView().showSuccess("", subTitle: "パスワードをリセットしました。", closeButtonTitle: "確認")
+        }
+    }
+
 }
 
 // MARK: - MakeInstance
