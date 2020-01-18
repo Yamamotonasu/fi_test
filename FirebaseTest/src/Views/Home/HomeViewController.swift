@@ -14,14 +14,14 @@ import RxCocoa
  * ホーム画面のViewController
  */
 class HomeViewController: UIViewController {
-    
+
     // MARK: - Outlets
-    
+
     /// ログイン/ログアウトボタン
     @IBOutlet private weak var loginLogoutButton: UIButton!
 
     // MARK: - Properties
-    
+
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
 // MARK: - PrivateFunction
 
 extension HomeViewController {
-    
+
     private func subscribe() {
         // ログインボタン
         loginLogoutButton.rx.tap.subscribe(onNext: { [weak self] in
@@ -47,7 +47,7 @@ extension HomeViewController {
 // MARK: - MakeInstance
 
 extension HomeViewController {
-    
+
     static func makeInstance() -> UIViewController {
         guard let vc = R.storyboard.main.homeViewController() else {
             return UIViewController()

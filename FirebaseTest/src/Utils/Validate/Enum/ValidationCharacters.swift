@@ -14,7 +14,7 @@ import Foundation
 enum ValidationCharacters {
     case userName
     case password
-    
+
     var max: Int {
         switch self {
         case .userName:
@@ -23,7 +23,7 @@ enum ValidationCharacters {
             return 50
         }
     }
-    
+
     var min: Int {
         switch self {
         case .userName:

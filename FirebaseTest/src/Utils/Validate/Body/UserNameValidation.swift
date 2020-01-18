@@ -14,7 +14,7 @@ import Foundation
 enum InvalidUserName: InvalidStatus {
     case empty
     case tooLong(maxCount: Int)
-    
+
     var message: String {
         switch self {
         case .empty:
@@ -27,13 +27,12 @@ enum InvalidUserName: InvalidStatus {
 }
 
 extension ValidationContainer where Target == String, Invalid == InvalidUserName {
-    
+
     /// 文字列は空文字ではない
     func isNotEmpty() -> Self {
         return guarantee({ !$0.isEmpty }, otherwise: .empty)
     }
 
-    
     /// 文字列は最大でmaxDigitsである
     func lessThanDigits() -> Self {
         let maxDigits = ValidationCharacters.userName.max

@@ -16,7 +16,7 @@ enum InvalidPassword: InvalidStatus {
     case empty
     case tooShort(minCount: Int)
     case tooLong(maxCount: Int)
-    
+
     var message: String {
         switch self {
         case .empty:
@@ -31,18 +31,18 @@ enum InvalidPassword: InvalidStatus {
 }
 
 extension ValidationContainer where Target == String, Invalid == InvalidPassword {
-    
+
     /// 文字列は空文字ではない
     func isNotEmpty() -> Self {
         return guarantee({ !$0.isEmpty }, otherwise: .empty)
     }
-    
+
     /// 文字列は最大でmaxDigitsである
     func lessThanDigits() -> Self {
         let maxDigits = ValidationCharacters.password.max
         return guarantee({ $0.count <= maxDigits }, otherwise: .tooLong(maxCount: maxDigits))
     }
-    
+
     /// パスワードの最小はmaxDigitsである
     func greaterThanDigits() -> Self {
         let minDigits = ValidationCharacters.password.min
@@ -50,4 +50,3 @@ extension ValidationContainer where Target == String, Invalid == InvalidPassword
     }
 
 }
-

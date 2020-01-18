@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 struct CreateUserModel<E> {
-    
+
 //    static func createUser(info data: InputInfomation) {
 //        Auth.auth().createUser(withEmail: data.email, password: data.password) { (result, error) in
 //            if let error = error {
@@ -20,7 +20,7 @@ struct CreateUserModel<E> {
 //            self.dismiss(animated: true)
 //        }
 //    }
-    
+
     /**
      * 入力内容をモデル化
      */
@@ -42,9 +42,9 @@ struct CreateUserModel<E> {
 }
 
 extension CreateUserModel where E == UIViewController {
-    
+
     typealias View = E
-    
+
 //    static func createUser(info data: InputInfomation, @escaping completion: (AuthResultCallback) -> Void) {
 //        Auth.auth().createUser(withEmail: data.email, password: data.password) { (result, error) in
 //            if let error = error {

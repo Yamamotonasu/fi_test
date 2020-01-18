@@ -29,10 +29,10 @@ struct ValidationContainer<Target, Invalid: InvalidStatus> {
 
     /// 入力文字
     private let target: Target
-    
+
     /// 有効な入力 → .valud 無効な入力 → .invalid(status:)
     private let invalid: Invalid?
-   
+
     /// バリデーションを終了させる
     private func finish() -> ValidationStatus<Invalid> {
         if let invalid = invalid {
@@ -41,14 +41,14 @@ struct ValidationContainer<Target, Invalid: InvalidStatus> {
             return .valid
         }
     }
-    
+
     static func validate(_ target: Target, with validation: (Self) -> Self) -> ValidationStatus<Invalid> {
         let container = Self.init(target: target, invalid: nil)
         let result = validation(container).finish()
-        
+
         return result
     }
-    
+
     func guarantee(_ condition: (Target) -> Bool, otherwise invalidStatus: Invalid) -> Self {
         guard invalid == nil else {
             return self
@@ -59,5 +59,5 @@ struct ValidationContainer<Target, Invalid: InvalidStatus> {
             return ValidationContainer(target: target, invalid: invalidStatus)
         }
     }
-    
+
 }

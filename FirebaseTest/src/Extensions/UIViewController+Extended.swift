@@ -11,5 +11,5 @@ import UIKit
 import NSObject_Rx
 
 extension UIViewController {
-    
+
 }

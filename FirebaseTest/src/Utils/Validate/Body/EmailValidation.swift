@@ -16,7 +16,7 @@ let EMAIL_REGEX = "[A-Z0-9a-z._+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
 enum InvalidEmail: InvalidStatus {
     case empty
     case invalidFormat
-    
+
     var message: String {
         switch self {
         case .empty:
@@ -29,16 +29,16 @@ enum InvalidEmail: InvalidStatus {
 }
 
 extension ValidationContainer where Target == String, Invalid == InvalidEmail {
-    
+
     /// 文字列は空文字ではない
     func isNotEmpty() -> Self {
         return guarantee({ !$0.isEmpty }, otherwise: .empty)
     }
-    
+
     /// 有効なフォーマットである
     func validFormat() -> Self {
         return guarantee({ text in
-            let emailtst = NSPredicate(format:"SELF MATCHES %@", EMAIL_REGEX)
+            let emailtst = NSPredicate(format: "SELF MATCHES %@", EMAIL_REGEX)
             let result = emailtst.evaluate(with: text)
             return result
         }, otherwise: .invalidFormat)
