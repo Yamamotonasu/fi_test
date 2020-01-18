@@ -10,11 +10,15 @@ import UIKit
 import Firebase
 import RxSwift
 import RxCocoa
+import SCLAlertView
 
 /**
  * ユーザー登録画面
  */
 typealias UserNameValidator = ValidationContainer<String, InvalidUserName>
+typealias EmailValidator = ValidationContainer<String, InvalidEmail>
+typealias PassowrdValidator = ValidationContainer<String, InvalidPassword>
+
 class SignupViewController: UIViewController {
     
     // MARK: - Outlets
@@ -62,36 +66,44 @@ extension SignupViewController {
         }).disposed(by: rx.disposeBag)
     }
     
+    /// ユーザーを作成する
     private func createUser() {
+        // ユーザー名バリデーション
         let userStatus = validateUserName(userNameTextField.text ?? "")
         switch userStatus {
         case .invalid(let status):
-            switch status {
-            case .empty:
-                // TODO: showAlert
-                break
-            case .tooLong:
-                // TODO: showAlert
-                break
-            }
+            SCLAlertView().showError("エラー", subTitle: status.message, closeButtonTitle: "確認")
+            return
         case .valid:
             break
         }
 
-        guard let email = emailTextField.text else {
-            // TODO: メールアドレスを入力してください
+        // メールアドレスバリデーション
+        let emailStatus = validateEmail(emailTextField.text ?? "")
+        switch emailStatus {
+        case .invalid(let status):
+            SCLAlertView().showError("エラー", subTitle: status.message, closeButtonTitle: "確認")
             return
+        case .valid:
+            break
         }
         
-        guard let pass = passwordTextField.text, let passc = confirmPasswordTextField.text else {
-            // TODO: パスワードを入力してください。
+        // パスワードバリデーション
+        let passwordStatus = validatePassword(passwordTextField.text ?? "")
+        switch passwordStatus {
+        case .invalid(let status):
+            SCLAlertView().showError("エラー", subTitle: status.message, closeButtonTitle: "確認")
             return
+        case .valid:
+            break
         }
         
-        guard pass == passc else {
-            // TODO: パスワードと確認用パスワードが異なります。
+        // パスワードば確認用バリデーション
+        guard passwordTextField.text! == confirmPasswordTextField.text! else {
+            SCLAlertView().showError("エラー", subTitle: "パスワードと確認用のパスワードが異なります", closeButtonTitle: "確認")
             return
         }
+
 //        let info = CreateUserModel.InputInfomation.init(userName: userName, email: email, password: pass)
 //        Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>, completion: <#T##AuthDataResultCallback?##AuthDataResultCallback?##(AuthDataResult?, Error?) -> Void#>)
     }
@@ -102,9 +114,21 @@ extension SignupViewController {
 
 extension SignupViewController {
     
-    private func validateUserName(_ user: String) -> ValidationStatus<InvalidUserName> {
-        UserNameValidator.validate(userNameTextField.text!) { $0.isNotEmpty().lessThanDigits()}
+    /// userの名前の入力値に対してValidationを掛ける
+    private func validateUserName(_ userName: String) -> ValidationStatus<InvalidUserName> {
+        UserNameValidator.validate(userName) { $0.isNotEmpty().lessThanDigits()}
     }
+    
+    /// Emailのバリデーション
+    private func validateEmail(_ email: String) -> ValidationStatus<InvalidEmail> {
+        EmailValidator.validate(email) { $0.isNotEmpty().validFormat() }
+    }
+    
+    /// パスワードのバリデーション
+    private func validatePassword(_ password: String) -> ValidationStatus<InvalidPassword> {
+        PassowrdValidator.validate(password) { $0.isNotEmpty().lessThanDigits().greaterThanDigits() }
+    }
+
 }
 
 // MARK: - MakeInstance

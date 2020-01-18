@@ -30,6 +30,12 @@
 		0391FD9323CAA57300B2D47D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD9223CAA57300B2D47D /* R.generated.swift */; };
 		0391FD9723CAB56700B2D47D /* CreateUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD9623CAB56700B2D47D /* CreateUserModel.swift */; };
 		0391FD9923CABCC700B2D47D /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD9823CABCC700B2D47D /* InputValidation.swift */; };
+		03B8797823D2A89600DB7EFA /* SCLAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B8797723D2A89600DB7EFA /* SCLAlertView.framework */; };
+		03B8797923D2A89600DB7EFA /* SCLAlertView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03B8797723D2A89600DB7EFA /* SCLAlertView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		03B8797D23D2B1ED00DB7EFA /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8797C23D2B1ED00DB7EFA /* EmailValidation.swift */; };
+		03B8797F23D2B75B00DB7EFA /* UserNameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8797E23D2B75B00DB7EFA /* UserNameValidation.swift */; };
+		03B8798123D2B97E00DB7EFA /* PasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8798023D2B97E00DB7EFA /* PasswordValidation.swift */; };
+		03B8798423D2BA3C00DB7EFA /* ValidationCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8798323D2BA3C00DB7EFA /* ValidationCharacters.swift */; };
 		14616A1DD9A07F0C633D8485 /* Pods_FirebaseTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB24050ECD30968DB3B4CFC /* Pods_FirebaseTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				03B8797923D2A89600DB7EFA /* SCLAlertView.framework in Embed Frameworks */,
 				0391FD8123C7E11A00B2D47D /* RxRelay.framework in Embed Frameworks */,
 				0391FD7E23C7E10B00B2D47D /* RxCocoa.framework in Embed Frameworks */,
 				0391FD7B23C7E0FD00B2D47D /* NSObject_Rx.framework in Embed Frameworks */,
@@ -72,6 +79,11 @@
 		0391FD9223CAA57300B2D47D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		0391FD9623CAB56700B2D47D /* CreateUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserModel.swift; sourceTree = "<group>"; };
 		0391FD9823CABCC700B2D47D /* InputValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
+		03B8797723D2A89600DB7EFA /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = Carthage/Build/iOS/SCLAlertView.framework; sourceTree = "<group>"; };
+		03B8797C23D2B1ED00DB7EFA /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
+		03B8797E23D2B75B00DB7EFA /* UserNameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameValidation.swift; sourceTree = "<group>"; };
+		03B8798023D2B97E00DB7EFA /* PasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidation.swift; sourceTree = "<group>"; };
+		03B8798323D2BA3C00DB7EFA /* ValidationCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationCharacters.swift; sourceTree = "<group>"; };
 		1DB24050ECD30968DB3B4CFC /* Pods_FirebaseTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61B132FB389B9E115B9E415 /* Pods-FirebaseTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTest.release.xcconfig"; path = "Target Support Files/Pods-FirebaseTest/Pods-FirebaseTest.release.xcconfig"; sourceTree = "<group>"; };
 		B289571F4756B69E8CAE02C3 /* Pods-FirebaseTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTest.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseTest/Pods-FirebaseTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +99,7 @@
 				0391FD7A23C7E0FD00B2D47D /* NSObject_Rx.framework in Frameworks */,
 				14616A1DD9A07F0C633D8485 /* Pods_FirebaseTest.framework in Frameworks */,
 				0391FD8023C7E11A00B2D47D /* RxRelay.framework in Frameworks */,
+				03B8797823D2A89600DB7EFA /* SCLAlertView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,8 +170,8 @@
 		0391FD8423C961E500B2D47D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				03B8797A23D2B1CA00DB7EFA /* Validate */,
 				0391FD8523C9622400B2D47D /* Constants.swift */,
-				0391FD9823CABCC700B2D47D /* InputValidation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -198,6 +211,34 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		03B8797A23D2B1CA00DB7EFA /* Validate */ = {
+			isa = PBXGroup;
+			children = (
+				03B8798223D2BA2800DB7EFA /* Enum */,
+				03B8797B23D2B1DB00DB7EFA /* Body */,
+				0391FD9823CABCC700B2D47D /* InputValidation.swift */,
+			);
+			path = Validate;
+			sourceTree = "<group>";
+		};
+		03B8797B23D2B1DB00DB7EFA /* Body */ = {
+			isa = PBXGroup;
+			children = (
+				03B8797C23D2B1ED00DB7EFA /* EmailValidation.swift */,
+				03B8797E23D2B75B00DB7EFA /* UserNameValidation.swift */,
+				03B8798023D2B97E00DB7EFA /* PasswordValidation.swift */,
+			);
+			path = Body;
+			sourceTree = "<group>";
+		};
+		03B8798223D2BA2800DB7EFA /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				03B8798323D2BA3C00DB7EFA /* ValidationCharacters.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		95E25CE199AE31BCD602B3AE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +251,7 @@
 		ED7AE138E8BA239F81D708AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03B8797723D2A89600DB7EFA /* SCLAlertView.framework */,
 				0391FD7F23C7E11A00B2D47D /* RxRelay.framework */,
 				0391FD7C23C7E10B00B2D47D /* RxCocoa.framework */,
 				0391FD7923C7E0FD00B2D47D /* NSObject_Rx.framework */,
@@ -305,6 +347,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SCLAlertView.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -383,6 +426,8 @@
 			files = (
 				0391FD8823C9D2B300B2D47D /* SignupViewController.swift in Sources */,
 				0391FD8623C9622400B2D47D /* Constants.swift in Sources */,
+				03B8798423D2BA3C00DB7EFA /* ValidationCharacters.swift in Sources */,
+				03B8797D23D2B1ED00DB7EFA /* EmailValidation.swift in Sources */,
 				0391FD5E23C7688C00B2D47D /* LoginViewController.swift in Sources */,
 				0391FD9923CABCC700B2D47D /* InputValidation.swift in Sources */,
 				0391FD9723CAB56700B2D47D /* CreateUserModel.swift in Sources */,
@@ -390,7 +435,9 @@
 				0391FD5A23C7688C00B2D47D /* AppDelegate.swift in Sources */,
 				0391FD5C23C7688C00B2D47D /* SceneDelegate.swift in Sources */,
 				0391FD8B23C9DD9500B2D47D /* HomeViewController.swift in Sources */,
+				03B8797F23D2B75B00DB7EFA /* UserNameValidation.swift in Sources */,
 				0391FD8323C9603800B2D47D /* UIViewController+Extended.swift in Sources */,
+				03B8798123D2B97E00DB7EFA /* PasswordValidation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

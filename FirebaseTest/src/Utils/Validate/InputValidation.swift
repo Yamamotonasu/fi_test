@@ -14,14 +14,6 @@ import Foundation
 protocol InvalidStatus: Equatable {}
 
 /**
- * バリデーションエラーenum
- */
-enum InvalidUserName: InvalidStatus {
-    case empty
-    case tooLong(maxCount: Int)
-}
-
-/**
  * Validation status for input characters.
  */
 enum ValidationStatus<Invalid: InvalidStatus> {
@@ -31,11 +23,14 @@ enum ValidationStatus<Invalid: InvalidStatus> {
 }
 
 /**
- * 実際のバリデーションの型
+ * 実際のバリデーション用Container。Validate配下にextensionでバリデーションパターンを追加できる
  */
 struct ValidationContainer<Target, Invalid: InvalidStatus> {
 
+    /// 入力文字
     private let target: Target
+    
+    /// 有効な入力 → .valud 無効な入力 → .invalid(status:)
     private let invalid: Invalid?
    
     /// バリデーションを終了させる
@@ -65,35 +60,4 @@ struct ValidationContainer<Target, Invalid: InvalidStatus> {
         }
     }
     
-}
-
-extension ValidationContainer where Target == String, Invalid == InvalidUserName {
-    
-    /// 文字列は空文字ではない
-    func isNotEmpty() -> Self {
-        return guarantee({ !$0.isEmpty }, otherwise: .empty)
-    }
-
-    
-    /// 文字列は最大でmaxDigitsである
-    func lessThanDigits() -> Self {
-        let maxDigits = ValidationCharacters.userName.max
-        return guarantee({ $0.count <= maxDigits }, otherwise: .tooLong(maxCount: maxDigits))
-    }
-
-}
-
-/**
- * 入力文字数制限
- */
-enum ValidationCharacters {
-    case userName
-    
-    var max: Int {
-        switch self {
-        case .userName:
-            return 10
-        }
-    }
-
 }
