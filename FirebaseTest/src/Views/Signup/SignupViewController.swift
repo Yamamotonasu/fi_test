@@ -69,7 +69,8 @@ extension SignupViewController {
     /// ユーザーを作成する
     private func createUser() {
         // ユーザー名バリデーション
-        let userStatus = validateUserName(userNameTextField.text ?? "")
+        let userName = userNameTextField.text ?? ""
+        let userStatus = validateUserName(userName)
         switch userStatus {
         case .invalid(let status):
             SCLAlertView().showError("エラー", subTitle: status.message, closeButtonTitle: "確認")
@@ -79,7 +80,8 @@ extension SignupViewController {
         }
 
         // メールアドレスバリデーション
-        let emailStatus = validateEmail(emailTextField.text ?? "")
+        let email = emailTextField.text ?? ""
+        let emailStatus = validateEmail(email)
         switch emailStatus {
         case .invalid(let status):
             SCLAlertView().showError("エラー", subTitle: status.message, closeButtonTitle: "確認")
@@ -89,6 +91,7 @@ extension SignupViewController {
         }
         
         // パスワードバリデーション
+        let password = passwordTextField.text ?? ""
         let passwordStatus = validatePassword(passwordTextField.text ?? "")
         switch passwordStatus {
         case .invalid(let status):
@@ -104,8 +107,21 @@ extension SignupViewController {
             return
         }
 
-//        let info = CreateUserModel.InputInfomation.init(userName: userName, email: email, password: pass)
-//        Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>, completion: <#T##AuthDataResultCallback?##AuthDataResultCallback?##(AuthDataResult?, Error?) -> Void#>)
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
+            if let error = error {
+                debugPrint(error.localizedDescription)
+                SCLAlertView().showError("エラー", subTitle: error.localizedDescription, closeButtonTitle: "確認")
+                return
+            }
+            guard let _ = result?.user else {
+                SCLAlertView().showError("エラー", subTitle: "ユーザーの作成に失敗しました。", closeButtonTitle: "確認")
+                return
+            }
+            
+            SCLAlertView().showSuccess("", subTitle: "ユーザーを作成しました。", closeButtonTitle: "確認", animationStyle: .leftToRight)
+            self?.navigationController?.popViewController(animated: true)
+        }
+
     }
 
 }

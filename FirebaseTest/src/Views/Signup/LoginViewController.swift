@@ -10,6 +10,8 @@ import UIKit
 import Foundation
 import RxSwift
 import RxCocoa
+import Firebase
+import SCLAlertView
 
 /**
  * ログイン画面
@@ -60,7 +62,7 @@ extension LoginViewController {
     private func subscribe() {
         // ログインボタン
         loginButton.rx.tap.subscribe(onNext: { [weak self] in
-            
+            self?.loginUser()
         }).disposed(by: rx.disposeBag)
         
         // facebookログインびボタン
@@ -81,6 +83,24 @@ extension LoginViewController {
         }).disposed(by: rx.disposeBag)
     }
 
+}
+
+// MARK: - LoginFunctions
+
+extension LoginViewController {
+    
+    private func loginUser() {
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
+            if let error = error {
+                SCLAlertView().showError("", subTitle: error.localizedDescription, closeButtonTitle: "確認")
+                return
+            }
+            SCLAlertView().showSuccess("", subTitle: "ログインしました。")
+            self?.dismiss(animated: true)
+        }
+    }
 }
 
 // MARK: - MakeInstance

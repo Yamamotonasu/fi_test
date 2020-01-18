@@ -9,12 +9,21 @@
 import Foundation
 import Firebase
 
-struct CreateUserModel {
+struct CreateUserModel<E> {
     
-    static func createUser(info with: InputInfomation) {
-        
-    }
+//    static func createUser(info data: InputInfomation) {
+//        Auth.auth().createUser(withEmail: data.email, password: data.password) { (result, error) in
+//            if let error = error {
+//                debugPrint(error.localizedDescription)
+//            }
+//            guard let user = result?.user else { return }
+//            self.dismiss(animated: true)
+//        }
+//    }
     
+    /**
+     * 入力内容をモデル化
+     */
     struct InputInfomation {
 
         var userName: String
@@ -30,4 +39,20 @@ struct CreateUserModel {
         }
 
     }
+}
+
+extension CreateUserModel where E == UIViewController {
+    
+    typealias View = E
+    
+//    static func createUser(info data: InputInfomation, @escaping completion: (AuthResultCallback) -> Void) {
+//        Auth.auth().createUser(withEmail: data.email, password: data.password) { (result, error) in
+//            if let error = error {
+//                debugPrint(error.localizedDescription)
+//            }
+//            guard let user = result?.user else { return }
+//            completion((result?.user, error))
+//        }
+//    }
+
 }
