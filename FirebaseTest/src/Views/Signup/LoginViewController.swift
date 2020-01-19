@@ -95,7 +95,7 @@ extension LoginViewController {
         let password = passwordTextField.text ?? ""
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (_, error) in
             if let error = error {
-                SCLAlertView().showError("", subTitle: error.localizedDescription, closeButtonTitle: "確認")
+                self?.handleFireAuthError(error)
                 return
             }
             SCLAlertView().showSuccess("", subTitle: "ログインしました。")

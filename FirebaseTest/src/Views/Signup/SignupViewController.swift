@@ -46,6 +46,7 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribe()
+        setupUI()
     }
 
 }
@@ -64,6 +65,10 @@ extension SignupViewController {
         linkWithFacebookButton.rx.tap.subscribe(onNext: { [weak self] in
 
         }).disposed(by: rx.disposeBag)
+    }
+
+    private func setupUI() {
+        passwordTextField.rightViewMode = .always
     }
 
     /// ユーザーを作成する
@@ -109,8 +114,8 @@ extension SignupViewController {
 
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
             if let error = error {
+                self?.handleFireAuthError(error)
                 debugPrint(error.localizedDescription)
-                SCLAlertView().showError("エラー", subTitle: error.localizedDescription, closeButtonTitle: "確認")
                 return
             }
             guard let _ = result?.user else {
