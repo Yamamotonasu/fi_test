@@ -78,7 +78,8 @@ extension LoginViewController {
 
         // パスワードを忘れたときのボタン
         forgotPasswordButton.rx.tap.subscribe(onNext: { [weak self] in
-            self?.forgotPassword()
+            let vc = ResetPasswordViewController.makeInstance()
+            self?.present(vc, animated: true)
         }).disposed(by: rx.disposeBag)
     }
 

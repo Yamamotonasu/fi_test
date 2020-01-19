@@ -36,6 +36,8 @@
 		03B8797F23D2B75B00DB7EFA /* UserNameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8797E23D2B75B00DB7EFA /* UserNameValidation.swift */; };
 		03B8798123D2B97E00DB7EFA /* PasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8798023D2B97E00DB7EFA /* PasswordValidation.swift */; };
 		03B8798423D2BA3C00DB7EFA /* ValidationCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8798323D2BA3C00DB7EFA /* ValidationCharacters.swift */; };
+		03B8798723D45FBF00DB7EFA /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8798623D45FBF00DB7EFA /* ResetPasswordViewController.swift */; };
+		03B8798A23D45FFE00DB7EFA /* ResetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B8798923D45FFE00DB7EFA /* ResetPassword.storyboard */; };
 		14616A1DD9A07F0C633D8485 /* Pods_FirebaseTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB24050ECD30968DB3B4CFC /* Pods_FirebaseTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 		03B8797E23D2B75B00DB7EFA /* UserNameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameValidation.swift; sourceTree = "<group>"; };
 		03B8798023D2B97E00DB7EFA /* PasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidation.swift; sourceTree = "<group>"; };
 		03B8798323D2BA3C00DB7EFA /* ValidationCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationCharacters.swift; sourceTree = "<group>"; };
+		03B8798623D45FBF00DB7EFA /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		03B8798923D45FFE00DB7EFA /* ResetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResetPassword.storyboard; sourceTree = "<group>"; };
 		1DB24050ECD30968DB3B4CFC /* Pods_FirebaseTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61B132FB389B9E115B9E415 /* Pods-FirebaseTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTest.release.xcconfig"; path = "Target Support Files/Pods-FirebaseTest/Pods-FirebaseTest.release.xcconfig"; sourceTree = "<group>"; };
 		B289571F4756B69E8CAE02C3 /* Pods-FirebaseTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTest.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseTest/Pods-FirebaseTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 		0391FD8C23C9DE5100B2D47D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				03B8798823D45FDD00DB7EFA /* ResetPassoword */,
 				0391FD8A23C9DD9500B2D47D /* HomeViewController.swift */,
 				0391FD5F23C7688C00B2D47D /* Main.storyboard */,
 			);
@@ -237,6 +242,15 @@
 				03B8798323D2BA3C00DB7EFA /* ValidationCharacters.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		03B8798823D45FDD00DB7EFA /* ResetPassoword */ = {
+			isa = PBXGroup;
+			children = (
+				03B8798623D45FBF00DB7EFA /* ResetPasswordViewController.swift */,
+				03B8798923D45FFE00DB7EFA /* ResetPassword.storyboard */,
+			);
+			path = ResetPassoword;
 			sourceTree = "<group>";
 		};
 		95E25CE199AE31BCD602B3AE /* Pods */ = {
@@ -329,6 +343,7 @@
 				0391FD6323C7689300B2D47D /* Assets.xcassets in Resources */,
 				0391FD7023C7701500B2D47D /* Login.storyboard in Resources */,
 				0391FD6123C7688C00B2D47D /* Main.storyboard in Resources */,
+				03B8798A23D45FFE00DB7EFA /* ResetPassword.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +451,7 @@
 				0391FD5C23C7688C00B2D47D /* SceneDelegate.swift in Sources */,
 				0391FD8B23C9DD9500B2D47D /* HomeViewController.swift in Sources */,
 				03B8797F23D2B75B00DB7EFA /* UserNameValidation.swift in Sources */,
+				03B8798723D45FBF00DB7EFA /* ResetPasswordViewController.swift in Sources */,
 				0391FD8323C9603800B2D47D /* UIViewController+Extended.swift in Sources */,
 				03B8798123D2B97E00DB7EFA /* PasswordValidation.swift in Sources */,
 			);
