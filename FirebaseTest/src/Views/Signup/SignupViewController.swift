@@ -43,6 +43,18 @@ class SignupViewController: UIViewController {
 
     // MARK: - Properties
 
+    private var isEqualPassword: Bool {
+        return passwordTextField.text == confirmPasswordTextField.text
+    }
+
+    /// パスワードが一致している→ true パスワードが一致していない→false
+    private let passwordCheckRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+
+    /// パスワードチェック用Driver
+    private var passwordCheckDriver: Driver<Bool> {
+        return passwordCheckRelay.asDriver()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribe()
@@ -64,6 +76,23 @@ extension SignupViewController {
         // facebook連携ボタン
         linkWithFacebookButton.rx.tap.subscribe(onNext: { [weak self] in
 
+        }).disposed(by: rx.disposeBag)
+
+        // パスワード入力監視
+        passwordTextField.rx.text.subscribe(onNext: { [weak self] _ in
+            self?.passwordCheckRelay.accept(self?.isEqualPassword ?? false)
+        }).disposed(by: rx.disposeBag)
+
+        // パスワード確認入力監視
+        confirmPasswordTextField.rx.text.subscribe(onNext: { [weak self] _ in
+            self?.passwordCheckRelay.accept(self?.isEqualPassword ?? false)
+        }).disposed(by: rx.disposeBag)
+
+        // パスワードと確認が同じかどうかの処理
+        passwordCheckDriver.drive(onNext: { [weak self] in
+            self?.passwordTextField.textColor = $0 ? UIColor.black : UIColor.red
+            self?.confirmPasswordTextField.textColor = $0 ? UIColor.black : UIColor.red
+            self?.registerButton.isEnabled = $0
         }).disposed(by: rx.disposeBag)
     }
 
