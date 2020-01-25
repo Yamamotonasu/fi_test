@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Firebase
 
 /**
  * ホーム画面のViewController
@@ -26,6 +27,9 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Auth.auth().currentUser == nil {
+            Auth.auth()
+        }
         subscribe()
     }
 

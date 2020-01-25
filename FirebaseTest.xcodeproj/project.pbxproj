@@ -30,6 +30,7 @@
 		0391FD9323CAA57300B2D47D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD9223CAA57300B2D47D /* R.generated.swift */; };
 		0391FD9723CAB56700B2D47D /* CreateUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD9623CAB56700B2D47D /* CreateUserModel.swift */; };
 		0391FD9923CABCC700B2D47D /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD9823CABCC700B2D47D /* InputValidation.swift */; };
+		03A8E5D123DBC76400B49906 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A8E5D023DBC76400B49906 /* RoundedButton.swift */; };
 		03B8797823D2A89600DB7EFA /* SCLAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B8797723D2A89600DB7EFA /* SCLAlertView.framework */; };
 		03B8797923D2A89600DB7EFA /* SCLAlertView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03B8797723D2A89600DB7EFA /* SCLAlertView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03B8797D23D2B1ED00DB7EFA /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8797C23D2B1ED00DB7EFA /* EmailValidation.swift */; };
@@ -82,6 +83,8 @@
 		0391FD9223CAA57300B2D47D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		0391FD9623CAB56700B2D47D /* CreateUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserModel.swift; sourceTree = "<group>"; };
 		0391FD9823CABCC700B2D47D /* InputValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
+		03A8E5CC23D9CA1800B49906 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		03A8E5D023DBC76400B49906 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		03B8797723D2A89600DB7EFA /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = Carthage/Build/iOS/SCLAlertView.framework; sourceTree = "<group>"; };
 		03B8797C23D2B1ED00DB7EFA /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
 		03B8797E23D2B75B00DB7EFA /* UserNameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameValidation.swift; sourceTree = "<group>"; };
@@ -152,6 +155,7 @@
 				0391FD8423C961E500B2D47D /* Utils */,
 				0391FD7323C7732D00B2D47D /* Extensions */,
 				0391FD7223C7703C00B2D47D /* Views */,
+				03A8E5CC23D9CA1800B49906 /* TestPlayground.playground */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -176,6 +180,7 @@
 		0391FD8423C961E500B2D47D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				03A8E5CF23DBC74C00B49906 /* CustomClass */,
 				03B8797A23D2B1CA00DB7EFA /* Validate */,
 				0391FD8523C9622400B2D47D /* Constants.swift */,
 			);
@@ -217,6 +222,14 @@
 				0391FD9623CAB56700B2D47D /* CreateUserModel.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		03A8E5CF23DBC74C00B49906 /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				03A8E5D023DBC76400B49906 /* RoundedButton.swift */,
+			);
+			path = CustomClass;
 			sourceTree = "<group>";
 		};
 		03B8797A23D2B1CA00DB7EFA /* Validate */ = {
@@ -461,6 +474,7 @@
 				0391FD5A23C7688C00B2D47D /* AppDelegate.swift in Sources */,
 				0391FD5C23C7688C00B2D47D /* SceneDelegate.swift in Sources */,
 				03B8798D23D47ED500DB7EFA /* AuthErrorCode+Extended.swift in Sources */,
+				03A8E5D123DBC76400B49906 /* RoundedButton.swift in Sources */,
 				0391FD8B23C9DD9500B2D47D /* HomeViewController.swift in Sources */,
 				03B8797F23D2B75B00DB7EFA /* UserNameValidation.swift in Sources */,
 				03B8798723D45FBF00DB7EFA /* ResetPasswordViewController.swift in Sources */,
