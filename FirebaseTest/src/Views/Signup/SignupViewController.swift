@@ -152,8 +152,20 @@ extension SignupViewController {
                 return
             }
 
+            let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+
+            guard let _ = Auth.auth().currentUser else { return }
+
+            Auth.auth().signIn(with: credential) { (user, error) in
+                if let error = error {
+                    SCLAlertView().showError("エラー", subTitle: error.localizedDescription, closeButtonTitle: "確認")
+                }
+                self?.navigationController?.popViewController(animated: true)
+            }
             SCLAlertView().showSuccess("", subTitle: "ユーザーを作成しました。", closeButtonTitle: "確認", animationStyle: .leftToRight)
-            self?.navigationController?.popViewController(animated: true)
+//            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+//                self?.navigationController?.popViewController(animated: true)
+//            }
         }
 
     }

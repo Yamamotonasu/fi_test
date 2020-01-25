@@ -28,7 +28,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if Auth.auth().currentUser == nil {
-            Auth.auth()
+            // 匿名ログイン
+            Auth.auth().signInAnonymously { (result, error) in
+                if let error = error {
+                    self.handleFireAuthError(error)
+                } else {
+                    print(Auth.auth().currentUser?.uid ?? "***")
+                }
+            }
         }
         subscribe()
     }
@@ -42,6 +49,10 @@ extension HomeViewController {
     private func subscribe() {
         // ログインボタン
         loginLogoutButton.rx.tap.subscribe(onNext: { [weak self] in
+            // 匿名でログインしている場合はログアウトされない
+            if !(Auth.auth().currentUser?.isAnonymous ?? false) {
+                try! Auth.auth().signOut()
+            }
             let vc = LoginViewController.makeInstance()
             self?.present(vc, animated: true)
         }).disposed(by: rx.disposeBag)
