@@ -31,6 +31,8 @@
 		0391FD9723CAB56700B2D47D /* CreateUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD9623CAB56700B2D47D /* CreateUserModel.swift */; };
 		0391FD9923CABCC700B2D47D /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD9823CABCC700B2D47D /* InputValidation.swift */; };
 		03A8E5D123DBC76400B49906 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A8E5D023DBC76400B49906 /* RoundedButton.swift */; };
+		03A8E5D323DBF30400B49906 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A8E5D223DBF30400B49906 /* IQKeyboardManagerSwift.framework */; };
+		03A8E5D423DBF30400B49906 /* IQKeyboardManagerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03A8E5D223DBF30400B49906 /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03B8797823D2A89600DB7EFA /* SCLAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B8797723D2A89600DB7EFA /* SCLAlertView.framework */; };
 		03B8797923D2A89600DB7EFA /* SCLAlertView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03B8797723D2A89600DB7EFA /* SCLAlertView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03B8797D23D2B1ED00DB7EFA /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8797C23D2B1ED00DB7EFA /* EmailValidation.swift */; };
@@ -54,6 +56,7 @@
 				0391FD8123C7E11A00B2D47D /* RxRelay.framework in Embed Frameworks */,
 				0391FD7E23C7E10B00B2D47D /* RxCocoa.framework in Embed Frameworks */,
 				0391FD7B23C7E0FD00B2D47D /* NSObject_Rx.framework in Embed Frameworks */,
+				03A8E5D423DBF30400B49906 /* IQKeyboardManagerSwift.framework in Embed Frameworks */,
 				0391FD7723C7E0F100B2D47D /* RxSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -85,6 +88,7 @@
 		0391FD9823CABCC700B2D47D /* InputValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
 		03A8E5CC23D9CA1800B49906 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		03A8E5D023DBC76400B49906 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		03A8E5D223DBF30400B49906 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
 		03B8797723D2A89600DB7EFA /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = Carthage/Build/iOS/SCLAlertView.framework; sourceTree = "<group>"; };
 		03B8797C23D2B1ED00DB7EFA /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
 		03B8797E23D2B75B00DB7EFA /* UserNameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameValidation.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0391FD7D23C7E10B00B2D47D /* RxCocoa.framework in Frameworks */,
+				03A8E5D323DBF30400B49906 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				0391FD7623C7E0F100B2D47D /* RxSwift.framework in Frameworks */,
 				0391FD7A23C7E0FD00B2D47D /* NSObject_Rx.framework in Frameworks */,
 				14616A1DD9A07F0C633D8485 /* Pods_FirebaseTest.framework in Frameworks */,
@@ -289,6 +294,7 @@
 		ED7AE138E8BA239F81D708AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03A8E5D223DBF30400B49906 /* IQKeyboardManagerSwift.framework */,
 				03B8797723D2A89600DB7EFA /* SCLAlertView.framework */,
 				0391FD7F23C7E11A00B2D47D /* RxRelay.framework */,
 				0391FD7C23C7E10B00B2D47D /* RxCocoa.framework */,
@@ -387,6 +393,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SCLAlertView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
