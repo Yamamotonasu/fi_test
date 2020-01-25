@@ -163,9 +163,6 @@ extension SignupViewController {
                 self?.navigationController?.popViewController(animated: true)
             }
             SCLAlertView().showSuccess("", subTitle: "ユーザーを作成しました。", closeButtonTitle: "確認", animationStyle: .leftToRight)
-//            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-//                self?.navigationController?.popViewController(animated: true)
-//            }
         }
 
     }

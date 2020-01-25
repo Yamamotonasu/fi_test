@@ -10,13 +10,13 @@
         <!--ログイン-->
         <scene sceneID="Qp8-F0-O9k">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="asc-pA-WiT" customClass="LoginViewController" customModule="FirebaseTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="partialCurl" modalPresentationStyle="fullScreen" id="asc-pA-WiT" customClass="LoginViewController" customModule="FirebaseTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ztl-y8-ATr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="rHJ-0m-h4U">
-                                <rect key="frame" x="20" y="64" width="280" height="436"/>
+                                <rect key="frame" x="20" y="64" width="280" height="499"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ログイン" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAs-at-ROQ">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="18"/>
@@ -93,6 +93,17 @@
                                             <color key="titleColor" red="0.96862745098039216" green="0.94901960784313721" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNX-65-Qrg" customClass="RoundedButton" customModule="FirebaseTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="459" width="280" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Afv-9v-p4W"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
+                                        <state key="normal" title="戻る">
+                                            <color key="titleColor" red="0.96862745100000003" green="0.94901960780000005" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -106,6 +117,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="ログイン" id="90s-3s-JiQ"/>
                     <connections>
+                        <outlet property="backButton" destination="WNX-65-Qrg" id="qcq-39-dbO"/>
                         <outlet property="createNewUserButton" destination="jta-Ub-koG" id="ziE-67-ffL"/>
                         <outlet property="emailTextField" destination="ymS-w2-Ny9" id="OV4-v1-Wmf"/>
                         <outlet property="facebookLoginButton" destination="614-lY-EeV" id="j73-lR-M9A"/>

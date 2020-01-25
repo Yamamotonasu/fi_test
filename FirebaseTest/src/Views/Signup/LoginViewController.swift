@@ -38,6 +38,10 @@ class LoginViewController: UIViewController {
     /// 新しいユーザーを作成ボタン
     @IBOutlet private weak var createNewUserButton: UIButton!
 
+    /// 戻るボタン
+    @IBOutlet private weak var backButton: RoundedButton!
+
+
     // MARK: - Properties
 
     // MARK: - LifeCycle
@@ -81,6 +85,11 @@ extension LoginViewController {
             let vc = ResetPasswordViewController.makeInstance()
             self?.present(vc, animated: true)
         }).disposed(by: rx.disposeBag)
+
+        // 戻るボタン
+        backButton.rx.tap.subscribe(onNext: { [weak self] in
+            self?.dismiss(animated: true)
+        })
     }
 
 }
