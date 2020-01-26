@@ -71,17 +71,13 @@
                                             <color key="titleColor" red="0.96862745098039216" green="0.94901960784313721" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="614-lY-EeV" customClass="RoundedButton" customModule="FirebaseTest" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AC-zd-I7G">
                                         <rect key="frame" x="0.0" y="333" width="280" height="40"/>
-                                        <color key="backgroundColor" red="0.25882352941176467" green="0.40392156862745099" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="bp8-yL-Ybn"/>
+                                            <constraint firstAttribute="height" constant="40" id="SaX-lN-Xzm"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
-                                        <state key="normal" title="Facebookでログイン">
-                                            <color key="titleColor" red="0.96862745098039216" green="0.94901960784313721" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jta-Ub-koG" customClass="RoundedButton" customModule="FirebaseTest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="396" width="280" height="40"/>
                                         <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -120,7 +116,7 @@
                         <outlet property="backButton" destination="WNX-65-Qrg" id="qcq-39-dbO"/>
                         <outlet property="createNewUserButton" destination="jta-Ub-koG" id="ziE-67-ffL"/>
                         <outlet property="emailTextField" destination="ymS-w2-Ny9" id="OV4-v1-Wmf"/>
-                        <outlet property="facebookLoginButton" destination="614-lY-EeV" id="j73-lR-M9A"/>
+                        <outlet property="faceBookLoginButtonView" destination="1AC-zd-I7G" id="nl7-en-0gp"/>
                         <outlet property="forgotPasswordButton" destination="kk5-9N-3ra" id="gZs-VH-gVY"/>
                         <outlet property="loginButton" destination="5aA-N5-TWj" id="er7-qM-Dqq"/>
                         <outlet property="passwordTextField" destination="rma-CN-qXy" id="sxb-kd-cMD"/>
@@ -182,7 +178,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1R-Nt-WSg" customClass="FBSDKButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1R-Nt-WSg">
                                 <rect key="frame" x="30" y="219" width="260" height="45"/>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.4039215686" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -193,13 +189,23 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9yt-jg-EFH">
+                                <rect key="frame" x="40" y="284" width="240" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dSB-7q-gVJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="9yt-jg-EFH" firstAttribute="leading" secondItem="y1w-Vs-djq" secondAttribute="leading" constant="40" id="4k1-AM-dCn"/>
                             <constraint firstItem="jXT-OV-jpO" firstAttribute="top" secondItem="y1w-Vs-djq" secondAttribute="top" constant="20" id="5qJ-55-lF7"/>
                             <constraint firstItem="jXT-OV-jpO" firstAttribute="leading" secondItem="y1w-Vs-djq" secondAttribute="leading" constant="20" id="9Us-Qn-Z5v"/>
                             <constraint firstItem="n1R-Nt-WSg" firstAttribute="top" secondItem="jXT-OV-jpO" secondAttribute="bottom" constant="40" id="Loc-fN-ras"/>
                             <constraint firstItem="y1w-Vs-djq" firstAttribute="trailing" secondItem="n1R-Nt-WSg" secondAttribute="trailing" constant="30" id="VyQ-bp-uk8"/>
+                            <constraint firstItem="y1w-Vs-djq" firstAttribute="trailing" secondItem="9yt-jg-EFH" secondAttribute="trailing" constant="40" id="bhy-C2-XCU"/>
+                            <constraint firstItem="9yt-jg-EFH" firstAttribute="top" secondItem="n1R-Nt-WSg" secondAttribute="bottom" constant="20" id="cpP-le-pGh"/>
                             <constraint firstItem="n1R-Nt-WSg" firstAttribute="leading" secondItem="y1w-Vs-djq" secondAttribute="leading" constant="30" id="i6D-bu-yEe"/>
                             <constraint firstItem="y1w-Vs-djq" firstAttribute="trailing" secondItem="jXT-OV-jpO" secondAttribute="trailing" constant="20" id="r8Y-z6-Amc"/>
                         </constraints>
@@ -207,13 +213,14 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="bcY-OG-lPp" id="tXV-s7-xH3"/>
+                        <outlet property="faceBookLoginButtonView" destination="9yt-jg-EFH" id="OMD-vk-fav"/>
                         <outlet property="loginButton" destination="n1R-Nt-WSg" id="meg-xq-tFb"/>
                         <outlet property="passwordTextField" destination="a3F-GK-7fI" id="UAQ-sW-hB2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5S-RU-DvW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1181" y="784"/>
+            <point key="canvasLocation" x="1179.375" y="783.80281690140851"/>
         </scene>
         <!--ユーザー作成画面-->
         <scene sceneID="jja-Im-04S">

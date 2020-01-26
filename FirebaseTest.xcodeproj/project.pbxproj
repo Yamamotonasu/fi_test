@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		036C348E23DD435800EF8342 /* UIView+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C348D23DD435800EF8342 /* UIView+Extended.swift */; };
+		036C349023DD46B000EF8342 /* UIColor.Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C348F23DD46B000EF8342 /* UIColor.Extended.swift */; };
 		0391FD5A23C7688C00B2D47D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD5923C7688C00B2D47D /* AppDelegate.swift */; };
 		0391FD5C23C7688C00B2D47D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD5B23C7688C00B2D47D /* SceneDelegate.swift */; };
 		0391FD5E23C7688C00B2D47D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD5D23C7688C00B2D47D /* LoginViewController.swift */; };
@@ -66,6 +68,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		036C348D23DD435800EF8342 /* UIView+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extended.swift"; sourceTree = "<group>"; };
+		036C348F23DD46B000EF8342 /* UIColor.Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.Extended.swift; sourceTree = "<group>"; };
 		0391FD5623C7688C00B2D47D /* FirebaseTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0391FD5923C7688C00B2D47D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0391FD5B23C7688C00B2D47D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				0391FD8223C9603800B2D47D /* UIViewController+Extended.swift */,
+				036C348D23DD435800EF8342 /* UIView+Extended.swift */,
+				036C348F23DD46B000EF8342 /* UIColor.Extended.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -478,12 +484,14 @@
 				03B8798423D2BA3C00DB7EFA /* ValidationCharacters.swift in Sources */,
 				03B8797D23D2B1ED00DB7EFA /* EmailValidation.swift in Sources */,
 				0391FD5E23C7688C00B2D47D /* LoginViewController.swift in Sources */,
+				036C349023DD46B000EF8342 /* UIColor.Extended.swift in Sources */,
 				0391FD9923CABCC700B2D47D /* InputValidation.swift in Sources */,
 				03A8E5D623DC148300B49906 /* FaceBookLoginViewController.swift in Sources */,
 				0391FD9723CAB56700B2D47D /* CreateUserModel.swift in Sources */,
 				0391FD9323CAA57300B2D47D /* R.generated.swift in Sources */,
 				0391FD5A23C7688C00B2D47D /* AppDelegate.swift in Sources */,
 				0391FD5C23C7688C00B2D47D /* SceneDelegate.swift in Sources */,
+				036C348E23DD435800EF8342 /* UIView+Extended.swift in Sources */,
 				03B8798D23D47ED500DB7EFA /* AuthErrorCode+Extended.swift in Sources */,
 				03A8E5D123DBC76400B49906 /* RoundedButton.swift in Sources */,
 				0391FD8B23C9DD9500B2D47D /* HomeViewController.swift in Sources */,

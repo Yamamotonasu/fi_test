@@ -11,11 +11,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 import FBSDKLoginKit
+import SCLAlertView
 
 /**
- * Facebookログイン画面
+ * Facebookログイン画面(pending)
  */
-class FaceBookLoginViewController: UIViewController, LoginButtonDelegate {
+class FaceBookLoginViewController: UIViewController {
+
 
     // MARK: - Outlets
 
@@ -26,7 +28,10 @@ class FaceBookLoginViewController: UIViewController, LoginButtonDelegate {
     @IBOutlet private weak var passwordTextField: UITextField!
 
     /// ログインボタン
-    @IBOutlet weak var loginButton: FBLoginButton!
+    @IBOutlet private weak var loginButton: UIButton!
+
+    /// facebookログイン用ボタンビュー
+    @IBOutlet private weak var faceBookLoginButtonView: UIView!
 
     // MARK: - Properties
 
@@ -43,24 +48,33 @@ class FaceBookLoginViewController: UIViewController, LoginButtonDelegate {
 
 // MARK: - PrivateFunction
 
-extension FaceBookLoginViewController {
+extension FaceBookLoginViewController: LoginButtonDelegate {
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        //
+    }
+
 
     private func subscribe() {
-        loginButton.rx.tap.subscribe(onNext:{ [weak self] in
-            self?.facebookLogin()
-        }).disposed(by: rx.disposeBag)
+//        loginButton.rx.tap.subscribe(onNext:{ [weak self] in
+//
+//        }).disposed(by: rx.disposeBag)
     }
 
     private func setupFaceBookLogin() {
-
-        loginButton.permissions = ["public_profie", "email"]
+        let loginButton = FBLoginButton()
+        loginButton.permissions = ["public_profile", "email"]
         loginButton.delegate = self
+        faceBookLoginButtonView.allPin(subView: loginButton)
+        faceBookLoginButtonView.addSubview(loginButton)
     }
 
     private func checkFaceBookLogin() {
     }
 
-    private func facebookLogin() {
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        if let error = error {
+            SCLAlertView().showError("", subTitle: error.localizedDescription, closeButtonTitle: "確認")
+        }
     }
 }
 
