@@ -12,6 +12,7 @@ import RxSwift
 import RxCocoa
 import Firebase
 import SCLAlertView
+import FBSDKLoginKit
 
 /**
  * ログイン画面
@@ -32,8 +33,8 @@ class LoginViewController: UIViewController {
     /// ログインボタン
     @IBOutlet private weak var loginButton: UIButton!
 
-    /// facebookログイン
-    @IBOutlet private weak var facebookLoginButton: UIButton!
+    /// Facebookログイン用View
+    @IBOutlet weak var faceBookLoginButtonView: UIView!
 
     /// 新しいユーザーを作成ボタン
     @IBOutlet private weak var createNewUserButton: UIButton!
@@ -48,8 +49,13 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkFaceBookLogined()
         setupUI()
         subscribe()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
 }
@@ -68,11 +74,6 @@ extension LoginViewController {
             self?.loginUser()
         }).disposed(by: rx.disposeBag)
 
-        // facebookログインびボタン
-        facebookLoginButton.rx.tap.subscribe(onNext: { [weak self] in
-
-        }).disposed(by: rx.disposeBag)
-
         // ユーザー作成ボタン
         createNewUserButton.rx.tap.subscribe(onNext: { [weak self] in
             guard let _self = self else { return }
@@ -89,7 +90,7 @@ extension LoginViewController {
         // 戻るボタン
         backButton.rx.tap.subscribe(onNext: { [weak self] in
             self?.dismiss(animated: true)
-        })
+        }).disposed(by: rx.disposeBag)
     }
 
 }
@@ -122,6 +123,71 @@ extension LoginViewController {
             }
             SCLAlertView().showSuccess("", subTitle: "パスワードをリセットしました。", closeButtonTitle: "確認")
         }
+    }
+
+}
+
+// MARK: - Facebook login function
+
+extension LoginViewController: LoginButtonDelegate {
+
+    /// Facebookログインボタンの設定
+    private func setupFaceBookLogin() {
+        let faceBookLoginButton = FBLoginButton()
+        faceBookLoginButton.permissions = ["public_profile", "email"]
+        faceBookLoginButton.backgroundColor = UIColor.clear
+        faceBookLoginButton.frame = CGRect(x: 0, y: 0, width: loginButton.frame.width, height: loginButton.frame.height)
+        let newCenter = CGPoint(x: faceBookLoginButtonView.frame.width / 2, y: faceBookLoginButtonView.frame.height / 2)
+        faceBookLoginButton.center = newCenter
+        faceBookLoginButton.delegate = self
+        faceBookLoginButtonView.addSubview(faceBookLoginButton)
+    }
+
+    private func checkFaceBookLogined() {
+        // ログイン済みかどうかチェックする
+        if let token = AccessToken.current {
+            let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
+            Auth.auth().signIn(with: credential) { (result, error) in
+                if let error = error {
+                    self.handleFireAuthError(error)
+                    return
+                }
+                return
+            }
+        }
+        // 未ログインだった場合はFaceBookログインの処理を行う
+        setupFaceBookLogin()
+    }
+
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        // ログアウトの処理
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+            self.handleFireAuthError(signOutError)
+        }
+    }
+
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        if let error = error {
+            self.handleFireAuthError(error)
+            return
+        }
+
+        if let token = AccessToken.current {
+            let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
+            Auth.auth().signIn(with: credential) { (result, error) in
+                if let error = error {
+                    self.handleFireAuthError(error)
+                    return
+                }
+                print("FaceBookLogin successful!!")
+                // ログイン後の処理
+            }
+        }
+
+        // tokenを取得出来なかった時の処理
     }
 
 }

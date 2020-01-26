@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		036C348E23DD435800EF8342 /* UIView+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C348D23DD435800EF8342 /* UIView+Extended.swift */; };
+		036C349023DD46B000EF8342 /* UIColor.Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C348F23DD46B000EF8342 /* UIColor.Extended.swift */; };
 		0391FD5A23C7688C00B2D47D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD5923C7688C00B2D47D /* AppDelegate.swift */; };
 		0391FD5C23C7688C00B2D47D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD5B23C7688C00B2D47D /* SceneDelegate.swift */; };
 		0391FD5E23C7688C00B2D47D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD5D23C7688C00B2D47D /* LoginViewController.swift */; };
@@ -31,6 +33,9 @@
 		0391FD9723CAB56700B2D47D /* CreateUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD9623CAB56700B2D47D /* CreateUserModel.swift */; };
 		0391FD9923CABCC700B2D47D /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391FD9823CABCC700B2D47D /* InputValidation.swift */; };
 		03A8E5D123DBC76400B49906 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A8E5D023DBC76400B49906 /* RoundedButton.swift */; };
+		03A8E5D323DBF30400B49906 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A8E5D223DBF30400B49906 /* IQKeyboardManagerSwift.framework */; };
+		03A8E5D423DBF30400B49906 /* IQKeyboardManagerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03A8E5D223DBF30400B49906 /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		03A8E5D623DC148300B49906 /* FaceBookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A8E5D523DC148300B49906 /* FaceBookLoginViewController.swift */; };
 		03B8797823D2A89600DB7EFA /* SCLAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B8797723D2A89600DB7EFA /* SCLAlertView.framework */; };
 		03B8797923D2A89600DB7EFA /* SCLAlertView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03B8797723D2A89600DB7EFA /* SCLAlertView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03B8797D23D2B1ED00DB7EFA /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8797C23D2B1ED00DB7EFA /* EmailValidation.swift */; };
@@ -54,6 +59,7 @@
 				0391FD8123C7E11A00B2D47D /* RxRelay.framework in Embed Frameworks */,
 				0391FD7E23C7E10B00B2D47D /* RxCocoa.framework in Embed Frameworks */,
 				0391FD7B23C7E0FD00B2D47D /* NSObject_Rx.framework in Embed Frameworks */,
+				03A8E5D423DBF30400B49906 /* IQKeyboardManagerSwift.framework in Embed Frameworks */,
 				0391FD7723C7E0F100B2D47D /* RxSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -62,6 +68,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		036C348D23DD435800EF8342 /* UIView+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extended.swift"; sourceTree = "<group>"; };
+		036C348F23DD46B000EF8342 /* UIColor.Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.Extended.swift; sourceTree = "<group>"; };
 		0391FD5623C7688C00B2D47D /* FirebaseTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0391FD5923C7688C00B2D47D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0391FD5B23C7688C00B2D47D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +93,8 @@
 		0391FD9823CABCC700B2D47D /* InputValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
 		03A8E5CC23D9CA1800B49906 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		03A8E5D023DBC76400B49906 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		03A8E5D223DBF30400B49906 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
+		03A8E5D523DC148300B49906 /* FaceBookLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookLoginViewController.swift; sourceTree = "<group>"; };
 		03B8797723D2A89600DB7EFA /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = Carthage/Build/iOS/SCLAlertView.framework; sourceTree = "<group>"; };
 		03B8797C23D2B1ED00DB7EFA /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
 		03B8797E23D2B75B00DB7EFA /* UserNameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameValidation.swift; sourceTree = "<group>"; };
@@ -104,6 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0391FD7D23C7E10B00B2D47D /* RxCocoa.framework in Frameworks */,
+				03A8E5D323DBF30400B49906 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				0391FD7623C7E0F100B2D47D /* RxSwift.framework in Frameworks */,
 				0391FD7A23C7E0FD00B2D47D /* NSObject_Rx.framework in Frameworks */,
 				14616A1DD9A07F0C633D8485 /* Pods_FirebaseTest.framework in Frameworks */,
@@ -173,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				0391FD8223C9603800B2D47D /* UIViewController+Extended.swift */,
+				036C348D23DD435800EF8342 /* UIView+Extended.swift */,
+				036C348F23DD46B000EF8342 /* UIColor.Extended.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,6 +205,7 @@
 			children = (
 				0391FD8723C9D2B300B2D47D /* SignupViewController.swift */,
 				0391FD5D23C7688C00B2D47D /* LoginViewController.swift */,
+				03A8E5D523DC148300B49906 /* FaceBookLoginViewController.swift */,
 				0391FD6F23C7701500B2D47D /* Login.storyboard */,
 			);
 			path = Signup;
@@ -289,6 +303,7 @@
 		ED7AE138E8BA239F81D708AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03A8E5D223DBF30400B49906 /* IQKeyboardManagerSwift.framework */,
 				03B8797723D2A89600DB7EFA /* SCLAlertView.framework */,
 				0391FD7F23C7E11A00B2D47D /* RxRelay.framework */,
 				0391FD7C23C7E10B00B2D47D /* RxCocoa.framework */,
@@ -387,6 +402,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SCLAlertView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -468,11 +484,14 @@
 				03B8798423D2BA3C00DB7EFA /* ValidationCharacters.swift in Sources */,
 				03B8797D23D2B1ED00DB7EFA /* EmailValidation.swift in Sources */,
 				0391FD5E23C7688C00B2D47D /* LoginViewController.swift in Sources */,
+				036C349023DD46B000EF8342 /* UIColor.Extended.swift in Sources */,
 				0391FD9923CABCC700B2D47D /* InputValidation.swift in Sources */,
+				03A8E5D623DC148300B49906 /* FaceBookLoginViewController.swift in Sources */,
 				0391FD9723CAB56700B2D47D /* CreateUserModel.swift in Sources */,
 				0391FD9323CAA57300B2D47D /* R.generated.swift in Sources */,
 				0391FD5A23C7688C00B2D47D /* AppDelegate.swift in Sources */,
 				0391FD5C23C7688C00B2D47D /* SceneDelegate.swift in Sources */,
+				036C348E23DD435800EF8342 /* UIView+Extended.swift in Sources */,
 				03B8798D23D47ED500DB7EFA /* AuthErrorCode+Extended.swift in Sources */,
 				03A8E5D123DBC76400B49906 /* RoundedButton.swift in Sources */,
 				0391FD8B23C9DD9500B2D47D /* HomeViewController.swift in Sources */,
@@ -559,6 +578,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -612,6 +632,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

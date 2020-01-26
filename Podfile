@@ -10,12 +10,18 @@ def firebase
   pod 'Firebase/Auth'
 end
 
+def facebook_sdk
+  pod 'FBSDKCoreKit/Swift'
+  pod 'FBSDKLoginKit/Swift'
+end
+
 target 'FirebaseTest' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   
   rswift
   firebase
+  facebook_sdk
 
   # Pods for FirebaseTest
 
